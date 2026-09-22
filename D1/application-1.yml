@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: v03-argocd-applications/helm/nginx
-    repoURL: https://github.com/devopshobbies/argocd-tutorial.git
+    path: D1/helm/nginx
+    repoURL: https://github.com/gg-alva/gitops.git
     targetRevision: main
 
