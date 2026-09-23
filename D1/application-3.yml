@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appliication-from-scratch
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      releaseName: gitops
+      valueFiles:
+        - custom-values.yaml
+    path: D1/helm/nginx
+    repoURL: https://github.com/gg-alva/gitops.git
+    targetRevision: main

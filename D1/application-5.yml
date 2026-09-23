@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appliication-directory
+spec:
+  destination:
+    namespace: directory
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      exclude: 'serviceaccount.yml'
+    path: D1/dir
+    repoURL: https://github.com/gg-alva/gitops.git
+    targetRevision: main
