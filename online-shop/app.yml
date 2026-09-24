@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/LondheShubham153/argocd-demos.git    # Replace it with your forked repo
+    repoURL: https://github.com/gg-alva/gitops.git    # Replace it with your forked repo
     targetRevision: main
-    path: declarative_approach/online_shop
+    path: online-shop
   destination:
     server: 172.198.48.183:31604
     namespace: default
