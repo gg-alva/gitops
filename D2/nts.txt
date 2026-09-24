@@ -1,0 +1,24 @@
+Restricting application using the projects in 3 ways:
+
+sourceRepos:
+  - repolink #this uses the repo given
+  - !repolink  #this repo cant be used for deploy ( ! )
+  - '*'  #source repo can use all other repo
+
+
+destinations:
+  - namespace: 'dev'
+  - server: '*' or ;http k8 svc
+
+clusterResourceWhitelist:
+  - group: ""
+    kind: "Namespace"
+
+namespaceResourceWhitelist:
+  - group: "apps"
+    kind: "Deployment"
+
+namespaceResourceBlacklist:
+  - group: "apps"
+    kind: "Deployment"
+
