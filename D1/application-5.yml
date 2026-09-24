@@ -10,6 +10,8 @@ spec:
   source:
     directory:
       exclude: 'serviceaccount.yml'
+      # include: '{serviceaccount.yml,service.yml}'
+      # recurse: true
     path: D1/dir
     repoURL: https://github.com/gg-alva/gitops.git
     targetRevision: main

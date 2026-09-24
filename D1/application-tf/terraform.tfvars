@@ -1,0 +1,10 @@
+username = "admin"
+password = "xxxx"
+server_addr = "localhost:32073"
+namespace = "argocd"
+repo_url =  "https://github.com/gg-alva/gitops.git"
+path = "D1/hel"
+target_revision = "main"
+values_files = ["values.yaml"]
+destination_server = "https://kubernetes.default.svc"
+insecure = true
