@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app                # Root application name
+  namespace: argocd             # Always in ArgoCD namespace
+spec:
+  project: default              # Can also assign to a Project if needed
+  source:
+    repoURL: https://github.com/gg-alva/gitops.git   # Repo containing child apps
+    targetRevision: main        # Git branch to track
+    path: D3/AOA/apps   # Path where child app manifests are stored
+  destination:
+    server: https://34.204.177.6:31092  # Deploying inside the same cluster
+    namespace: argocd #lications (CRDs) must live in argocd namespace
+  syncPolicy:
+    automated:
+      prune: true                 # Prune removed child apps
+      selfHeal: true              # Auto-fix drift

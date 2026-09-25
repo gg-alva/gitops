@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-child              # Child app name
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gg-alva/gitops.git # Repo containing child apps(that you have forked and cloned earlier)
+    targetRevision: main
+    path: D1/helm/nginx      # path of Nginx app in `argocd-demos` repo
+  destination:
+    server: https://34.204.177.6:31092 # Replace with your Cluster Url, To get run: `argocd cluster list`
+    namespace: default           # Deploys into default namespace
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
